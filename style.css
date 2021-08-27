@@ -138,7 +138,7 @@ i {
     top: 550px;
 }
 /*------------------image-dé--------------------*/
-.face-des {
+.dice {
     position: absolute;
     left: 50%;
     top: 280px;
@@ -159,7 +159,7 @@ i {
     .btn-hold {
         top: 950px;
     }
-    .face-des {
+    .dice {
         top: 750px;
     }
 }
