@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="jeu en ligne de lancés de dés avec deux participants">
+    <meta name="Keywords" content="jeu, score, dés, dice, game, jeu en ligne, jeu de dés">
+    <meta name="Revisit-After" content="5 days">
+    <meta name="robots" content="index"/>
+    <title>Jeu de dés en ligne</title>
+    <!---------------------CSS-link------------------------>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <!-----------------Framework-bootstrap----------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!---------------------Google-Font--------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet"> 
+
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-6 bloc player-1 active">
+        <div class="player-name" id="name-1">PLAYER 1<span>&#8226;</span></div>
+        <div class="player-score" id="score-player-1">25</div>
+        <div class="current-box-player">
+            <div class="player-current-title">Current</div>
+            <div class="player-current-score" id="current-1">7</div> 
+        </div><!--current-box-player-1-->
+  </div><!--player-1-active-end--->
+  <div class="col-sm-12 col-md-6  bloc player-2">
+      <div class="player-name" id="name-2">PLAYER 2</div>
+      <div class="player-score" id="score-player-2">12</div>
+      <div class="current-box-player">
+            <div class="player-current-title">Current</div>
+            <div class="player-current-score" id="current-2">0</div>
+      </div><!--current-box-player-1-->
+    </div><!--------row-end--------->
+  </div><!--player-1-active-end--->
+    <button class="btn-new"><i class="bi bi-plus-circle"></i>New game</button>
+    <button class="btn-roll"><i class="bi bi-arrow-repeat"></i>Roll dice</button>
+    <button class="btn-hold"><i class="bi bi-download"></i>Hold</button>
+
+    <img src="./images/face-5.png" alt="face-des" class="face-des">
+</div><!-------container-end-->
+  <!-----------------bootstrap-js----------------->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+  
+  <script src="./script.js"></script>
+</body>
+</html>
