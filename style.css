@@ -27,14 +27,12 @@ body {
     overflow: hidden;
 }
 /*----------------Players--------------------*/
-.bloc {
-    height: 800px;
-}
+
 .player-0-panel,
 .player-1-panel {
     width: 50%;
     float: left;
-    height: 600px;
+    height: 800px;
     padding: 100px;
 }
 #name-1 {
@@ -75,7 +73,7 @@ span {
     margin-bottom: 120px;
 }
 /*----------------Current--------------------*/
-.current-box-player {
+.player-current-box{
     background-color: #EB4D4D;
     color: #fff;
     text-align: center;
@@ -83,7 +81,7 @@ span {
     margin: 0 auto;
     padding: 15px;
 }
-.player-current-title {
+.player-current-label {
     font-size: 12px;
     color: rgb(41, 39, 39);
     text-transform: uppercase;
