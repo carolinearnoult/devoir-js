@@ -2,7 +2,7 @@ let scoreBoard, scores, activePlayer, isPlaying;
 
 init();
 
-        //BTN-ROLL
+ //-----------------------------BTN-ROLL-------------------------------
 
 document.querySelector('.btn-roll').addEventListener('click', () => {
     let dice = Math.floor(Math.random() * 6 + 1);
@@ -18,11 +18,12 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
     }
 });
 
-        //BTN-HOLD
+//-----------------------------BTN-HOLD-------------------------------
 document.querySelector('.btn-hold').addEventListener('click', () => {
         //score global
     scores[activePlayer] = scoreBoard;
-        //Si les point sont >= 100 la joueur gagne
+    document.getElementById('score-' + activePlayer).innerText = scores[activePlayer];
+        //Si les points sont >= 100 le joueur gagne
     if (scores[activePlayer] >=100) {
         document.querySelector('.payer-'+ activePlayer + '-panel').classList.add('winner');
         isPlaying = false;
@@ -32,6 +33,8 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
     } 
 });
 
+
+//-----------------------------FUNCTIONS------------------------------
 function switchPlayer() {
     scoreBoard = 0;
     document.getElementById('current-' + activePlayer).innerText = scoreBoard;
@@ -62,7 +65,6 @@ function init () {
     document.querySelector('.player-1-panel').classList.remove('active');
     document.querySelector('.player-1-panel').classList.remove('winner');
     document.querySelector('.player-0-panel').classList.add('active');
-
 }
 
 
