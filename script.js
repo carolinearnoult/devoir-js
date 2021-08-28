@@ -13,7 +13,7 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
         document.querySelector('.dice').style.display = 'block';
         document.querySelector('.dice').src = './images/face-' + dice + '.png';
     } else {
-        // Changer de joueur
+        
         scoreBoard = 0;
         document.getElementById('current-' + activePlayer).innerText = scoreBoard;
         activePlayer == 0 ? activePlayer = 1 : activePlayer=0;
