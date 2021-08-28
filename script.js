@@ -41,8 +41,11 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
     }
 });
 
+//-----------------------------BTN-NEW-------------------------------
 
-//-----------------------------FUNCTIONS------------------------------
+document.querySelector('.btn-new').addEventListener('click', init);
+
+//-----------------------------FUNCTIONS-----------------------------
 function switchPlayer() {
     scoreBoard = 0;
     document.getElementById('current-' + activePlayer).innerText = scoreBoard;
