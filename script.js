@@ -2,26 +2,45 @@ let scoreBoard, scores, activePlayer, isPlaying;
 
 init();
 
-//BTN-ROLL
+        //BTN-ROLL
 
 document.querySelector('.btn-roll').addEventListener('click', () => {
     let dice = Math.floor(Math.random() * 6 + 1);
-    
+   
     if (dice != 1) {
-        scoreBoard = dice;
+        scoreBoard += dice;
         document.getElementById('current-' + activePlayer).innerText = scoreBoard;
         document.querySelector('.dice').style.display = 'block';
         document.querySelector('.dice').src = './images/face-' + dice + '.png';
     } else {
-        
-        scoreBoard = 0;
-        document.getElementById('current-' + activePlayer).innerText = scoreBoard;
-        activePlayer == 0 ? activePlayer = 1 : activePlayer=0;
-        document.querySelector('.player-0-panel').classList.remove('active');
-        document.querySelector('.player-1-panel').classList.remove('active');
-        document.querySelector('.player' + activePlayer + '-panel').classList.add('active');
+        //changer de joueur
+        switchPlayer();
     }
 });
+
+        //BTN-HOLD
+document.querySelector('.btn-hold').addEventListener('click', () => {
+        //score global
+    scores[activePlayer] = scoreBoard;
+        //Si les point sont >= 100 la joueur gagne
+    if (scores[activePlayer] >=100) {
+        document.querySelector('.payer-'+ activePlayer + '-panel').classList.add('winner');
+        isPlaying = false;
+    }  else {
+        //changer de joueur
+        switchPlayer();
+    } 
+});
+
+function switchPlayer() {
+    scoreBoard = 0;
+    document.getElementById('current-' + activePlayer).innerText = scoreBoard;
+    activePlayer == 0 ? activePlayer = 1 : activePlayer = 0;
+    document.querySelector('.dice').style.display = 'none';
+    document.querySelector('.player-0-panel').classList.remove('active');
+    document.querySelector('.player-1-panel').classList.remove('active');
+    document.querySelector('.player-' + activePlayer + '-panel').classList.add('active');
+}
 
 function init () {
     scoreBoard = 0;
