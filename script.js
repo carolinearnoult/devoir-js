@@ -5,32 +5,40 @@ init();
  //-----------------------------BTN-ROLL-------------------------------
 
 document.querySelector('.btn-roll').addEventListener('click', () => {
-    let dice = Math.floor(Math.random() * 6 + 1);
+    if(isPlaying) {
+
+    //valeur du dé de 1 à 6
+        let dice = Math.floor(Math.random() * 6 + 1);
    
-    if (dice != 1) {
-        scoreBoard += dice;
-        document.getElementById('current-' + activePlayer).innerText = scoreBoard;
-        document.querySelector('.dice').style.display = 'block';
-        document.querySelector('.dice').src = './images/face-' + dice + '.png';
-    } else {
+        if (dice != 1) {
+            scoreBoard += dice;
+            document.getElementById('current-' + activePlayer).innerText = scoreBoard;
+            document.querySelector('.dice').style.display = 'block';
+            document.querySelector('.dice').src = './images/face-' + dice + '.png';
+        } else {
         //changer de joueur
-        switchPlayer();
-    }
+            switchPlayer();
+        }
+    } 
 });
 
 //-----------------------------BTN-HOLD-------------------------------
+
 document.querySelector('.btn-hold').addEventListener('click', () => {
+    if(isPlaying) {
         //score global
-    scores[activePlayer] = scoreBoard;
-    document.getElementById('score-' + activePlayer).innerText = scores[activePlayer];
+        scores[activePlayer] += scoreBoard;
+        document.getElementById('score-' + activePlayer).innerText = scores[activePlayer];
         //Si les points sont >= 100 le joueur gagne
-    if (scores[activePlayer] >=100) {
-        document.querySelector('.payer-'+ activePlayer + '-panel').classList.add('winner');
-        isPlaying = false;
+        if (scores[activePlayer] >= 100) {
+             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+            document.getElementById('name-' + activePlayer).innerText = 'Winner !';
+            isPlaying = false;
     }  else {
         //changer de joueur
-        switchPlayer();
+            switchPlayer();
     } 
+    }
 });
 
 
