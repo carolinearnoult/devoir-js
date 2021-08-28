@@ -1,0 +1,5 @@
+user-agent : *
+Allow : /
+
+user-agent : *
+Sitemap: https://loving-lumiere-a48ea1.netlify.app/
